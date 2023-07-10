@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item" id="loginuser">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <h4 class="text-left p-5">Perfil</h4>
+      <hr>
+      <div class="profile-alert alert alert-success" role="alert">
+        Los datos se han guardado correctamente
+      </div>
+
+      <!-- imagen de perfil -->
+      <div class="d-flex justify-content-between float-end">
+        <img src="/img/img_perfil.png" alt="" id="profilePic" class="img-thumbnail float-end rounded">
+        <input type="file" id="uploadImg" class="d-none">
+      </div>
+
+      
+      <form action="" name="frmPerfil" id="frmPerfil" class="row mt-4 needs-validation" novalidate>
+        <!-- Datos del Usuario -->
+        <div class="row" id="datosobligatorios">
+
+          <div class="col">
+            <div class="form-check">
+              <label for="pnombre" class="form-label">Primer Nombre</label>
+              <input type="text" class="form-control" id="pnombre" name="pnombre" required>
+              <div class="invalid-feedback">
+                Debe ingresar su primer nombre
+              </div>
+            </div>
+
+            <div class="form-check">
+              <label for="papellido" class="form-label">Primer Apellido</label>
+              <input type="text" class="form-control" id="papellido" name="papellido" required>
+              <div class="invalid-feedback">
+                Debe ingresar su primer apellido
+              </div>
+            </div>
+
+            <div class="form-check">
+              <label for="emailusuario" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="emailusuario" name="emailusuario" required>
+              <div class="invalid-feedback">
+                Debe ingresar su e-mail
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <div class="col">
+            <div class="form-check">
+              <label for="snombre" class="form-label">Segundo Nombre</label>
+              <input type="text" class="form-control" id="snombre" name="snombre">
+            </div>
+
+            <div class="form-check">
+              <label for="sapellido" class="form-label">Segundo Apellido</label>
+              <input type="text" class="form-control" id="sapellido" name="sapellido">
+            </div>
+
+            <div class="form-check">
+              <label for="telefono" class="form-label">Telefono</label>
+              <input type="text" class="form-control" id="telefono" name="telefono">
+            </div>
+          </div>
+          <hr>
+          <div class="botonPerfil">
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+
+</html>

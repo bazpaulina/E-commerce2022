@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item" id="loginuser">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <h3 class="text-center p-5">Carrito de compras</h3>
+      <h4 class="h4">Artículos a comprar</h4>
+      <div class="susproductos" id="susproductos">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Costo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Subtotal</th>
+              <th scope="col">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="contenido">
+          </tbody>
+        </table>
+      </div>
+      <form name="frmCompra" method="post" id="frmCompra" class="row mt-4 needs-validation" novalidate>
+
+        <!-- Tipo de envio -->
+        <div class="tipoDeEnvio">
+          <h4>Tipo de Envío</h4>
+
+          <div class="form-check">
+            <input class="form-check-input radioenvio" value="premium" type="radio" name="envio" id="envio-premium">
+            <label class="form-check-label" for="envio-premium">
+              Premium 2 a 5 días (15%)
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input radioenvio" value="express" type="radio" name="envio" id="envio-express">
+            <label class="form-check-label" for="envio-express">
+              Express 5 a 8 días (7%)
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input radioenvio" value="standard" type="radio" name="envio" id="envio-standard"
+              checked>
+            <label class="form-check-label" for="envio-standard">
+              Standard 12 a 15 días (5%)
+            </label>
+          </div>
+
+        </div>
+
+        <!-- Direccion de envio -->
+        <div class="datos mt-4">
+          <h4>Dirección de envio</h4>
+
+          <div class="col-md-7">
+            <label for="calle" class="form-label">Calle</label>
+            <input type="text" class="form-control" id="calle" name="calle" required>
+            <div class="invalid-feedback">
+              Debe ingresar una calle
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="numero" class="form-label">Número</label>
+            <input type="text" class="form-control" id="numero" name="numero" required>
+            <div class="invalid-feedback">
+              Debe ingresar un número
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <label for="esquina" class="form-label">Esquina</label>
+            <input type="text" class="form-control" id="esquina" name="esquina" required>
+            <div class="invalid-feedback">
+              Debe ingresar una esquina
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Costos -->
+        <div class="costos">
+          <br>
+          <h4>Costos</h4>
+
+          <div class="row">
+            <div class="col" style="border:1px solid grey ;">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Subtotal</h5>
+                <small class="text-muted" id="subtot"></small>
+              </div>
+              <p class="mb-1">Costo unitario del producto por cantidad</p>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col" style="border:1px solid grey ;">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Costo de envio</h5>
+                <small class="text-muted" id="coste"></small>
+              </div>
+              <p class="mb-1">Según el costo de envio</p>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col" style="border:1px solid grey ;">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Total ($)</h5>
+                <small class="text-muted" id="tot"></small>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <hr>
+
+        <!-- Medios de pago -->
+        <div class="Pago mt-4">
+          <div class="alert alert-success" role="alert">
+            La compra ha finalizado con exito
+          </div>
+          <h4>Forma de pago</h4>
+          <p class="faltan-datos">Debe completar la forma de pago para finalizar la compra</p>
+          <a href="#exampleModal" data-bs-toggle="modal" data-bs-target="#medioDePago">
+            Seleccione medio de pago
+          </a>
+          <div class="modal fade" id="medioDePago" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5">Forma de pago</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metodo-pago" id="metodo-pago-tarjeta"
+                      onclick="metodoPago('tarjeta')" checked>
+                    <label class="form-check-label" for="tarjeta">
+                      Tarjeta de crédito
+                    </label>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="numero-tarjeta" class="form-label">Número de tarjeta</label>
+                    <input type="text" name="numero-tarjeta" class="form-control" id="numero-tarjeta"
+                      placeholder="xxxxxxxxxxxxx" required>
+                    <div class="invalid-feedback">
+                      Ingrese la tarjeta de credito
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="codigo-seguridad" class="form-label">Codigo de seguridad</label>
+                    <input type="text" name="codigo-seguridad" id="codigo-seguridad" class="form-control"
+                      placeholder="xxx" required>
+                    <div class="invalid-feedback">
+                      Ingrese el codigo de seguridad
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="vencimiento" class="form-label">Vencimiento (MM/AA)</label>
+                    <input type="text" name="vencimiento" id="vencimiento" class="form-control" placeholder="MM/AA"
+                      required>
+                    <div class="invalid-feedback">
+                      Ingrese el vencimiento (MM/AA)
+                    </div>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metodo-pago" id="metodo-pago-transferencia"
+                      onclick="metodoPago('transferencia')">
+                    <label class="form-check-label" for="transferencia">
+                      Transferencia bancaria
+                    </label>
+                  </div>
+                  <hr>
+                  <div class="col-md-4">
+                    <label for="numero-cuenta" class="form-label">Numero de cuenta</label>
+                    <input type="text" id="numero-cuenta" name="numero-cuenta" class="form-control"
+                      placeholder="xxxxxxxxxxxxxxx" disabled="disabled" required>
+                    <div class="invalid-feedback">
+                      Ingrese el numero de cuenta
+                    </div>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="item-button btn btn-primary" style="width: 60%; margin: 0 300px;">Finalizar
+      compra</button>
+    </div>
+    </form>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>
